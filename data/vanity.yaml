@@ -1,0 +1,7 @@
+# Example vanity.yaml
+
+host: gomodules.xyz
+
+paths:
+  /sync:
+    repo: https://github.com/gomodules/sync

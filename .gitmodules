@@ -1,0 +1,3 @@
+[submodule "themes/govanity"]
+	path = themes/govanity
+	url = https://github.com/appscodelabs/hugo-theme-govanity.git

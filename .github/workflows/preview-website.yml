@@ -1,0 +1,32 @@
+name: preview-website
+
+on: pull_request
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+        with:
+          submodules: true
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+
+      - name: Install Hugo
+        run: |
+          curl -fsSL -o hugo_extended.deb https://github.com/gohugoio/hugo/releases/download/v0.87.0/hugo_extended_0.87.0_Linux-64bit.deb
+          sudo dpkg -i hugo_extended.deb
+          rm hugo_extended.deb
+
+      - name: Generate Website
+        run: |
+          make gen
+
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_APPSCODE_GOVANIURLS }}'
+          expires: 1d

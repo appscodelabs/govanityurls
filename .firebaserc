@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "appscode-govanityurls"
+  },
+  "targets": {
+    "appscode-govanityurls": {
+      "hosting": {
+        "hugo": [
+          "appscodelabs-govanityurls"
+        ]
+      }
+    }
+  }
+}
