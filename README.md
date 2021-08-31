@@ -10,6 +10,20 @@ git submodule add https://github.com/appscodelabs/hugo-theme-govanity.git themes
 echo theme = \"govanity\" >> config.toml
 ```
 
+## How to update Hugo theme
+
+- https://www.vogella.com/tutorials/GitSubmodules/article.html
+
+```bash
+git clone --recursive git@github.com:gomodules/govanityurls.git
+cd govanityurls
+
+git submodule update --remote
+git add .
+git commit -s -a -m "update theme"
+git push origin HEAD
+```
+
 ## Firebase Configuration
 
 - https://firebase.google.com/docs/hosting/multisites
